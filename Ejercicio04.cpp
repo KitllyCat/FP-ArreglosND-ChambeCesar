@@ -1,13 +1,3 @@
-/*Intercambio de Filas: Desarrolle un programa que intercambie dos filas específicas de una matriz de 4x4 y muestre la matriz resultante.
-Ejemplo de Entrada
-Matriz:			Matriz resultante:
-1 2 3 4			9 10 11 12
-5 6 7 8			5 6 7 8
-9 10 11 12		1 2 3 4
-13 14 15 16		13 14 15 16
-Filas a intercambiar:
-0
-2*/
 #include <iostream>
 using namespace std;
 
