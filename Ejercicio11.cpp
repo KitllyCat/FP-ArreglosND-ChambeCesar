@@ -49,8 +49,42 @@ int bosque3[n][n]={
     {1,0,0,0,0,0,0,0,0,1}
 };
 
+void quemarArbol(int bosque[n][n], int bosqueFinal[n][n]){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(bosque[i][j]==0){ //a comprobar los arboles alrededor
+                bool arbolQuemado=false;
+                for(int vx=-1;vx<=1;vx++){
+                    for(int vy=-1;vy<=1;vy++){
+                        if (vx==0 && vy==0){
+                        	continue;
+						}
+                    	int ni=i+vx;
+                        int nj=j+vy;
+                        if (ni>=0 && ni<n && nj>=0 && nj<n){
+                            if (bosque[ni][nj]==1){
+                                arbolQuemado=true;
+                            }
+                        }
+                    }
+                }
+                if(arbolQuemado){
+				    bosqueFinal[i][j]=1;
+				}else{
+				    bosqueFinal[i][j]=0;
+				} 
+            }else if(bosque[i][j]==1){
+                bosqueFinal[i][j]=2;
+            }else{
+                bosqueFinal[i][j]=2;
+            }
+        }
+    }
+}
+
 int main(){
 	SetConsoleOutputCP(CP_UTF8);
+	int bosqueFinal[n][n];
 	int opcion;
 	do{
 		cout<<"---Simulación de Propagación de Fuego---"<<endl<<endl;
@@ -63,17 +97,35 @@ int main(){
 		switch(opcion){
 			case 1:{
 				system("cls");
+				cout<<"---Bosque Inicial---"<<endl<<endl;
 				verBosque(bosque1);
+				cout<<endl<<"Presione enter para comenzar a propagar el fuego...";
+			    cin.ignore();
+				cin.get();
+				bosqueFinal[n][n]=bosque1[n][n];
+				
 				break;
 			}
 			case 2:{
 				system("cls");
+				cout<<"---Bosque Inicial---"<<endl<<endl;
 				verBosque(bosque2);
+				cout<<endl<<"Presione enter para comenzar a propagar el fuego...";
+			    cin.ignore();
+				cin.get();
+				bosqueFinal[n][n]=bosque2[n][n];
+				
 				break;
 			}
 			case 3:{
 				system("cls");
+				cout<<"---Bosque Inicial---"<<endl<<endl;
 				verBosque(bosque3);
+				cout<<endl<<"Presione enter para comenzar a propagar el fuego...";
+			    cin.ignore();
+				cin.get();
+				bosqueFinal[n][n]=bosque3[n][n];
+				
 				break;
 			}
 			case 4:{
