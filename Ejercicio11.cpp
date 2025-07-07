@@ -93,6 +93,7 @@ int main(){
 		cout<<"2)Bosque 2(en el centro)"<<endl;
 		cout<<"3)Bosque 3(en las esquinas)"<<endl;
 		cout<<"4)Salir de la simulación..."<<endl;
+		cout<<"Escoja su opcion:";
 		cin>>opcion;
 		switch(opcion){
 			case 1:{
@@ -100,10 +101,12 @@ int main(){
 				cout<<"---Bosque Inicial---"<<endl<<endl;
 				verBosque(bosque1);
 				cout<<endl<<"Presione enter para comenzar a propagar el fuego...";
-			    cin.ignore();
-				cin.get();
+			    cin.ignore(); cin.get(); system("cls");
 				bosqueFinal[n][n]=bosque1[n][n];
-				
+				cout<<"---Bosque 1 después de Quemarse---"<<endl<<endl;
+				quemarArbol(bosque1, bosqueFinal);
+				verBosque(bosqueFinal);
+				Sleep(3500); system("cls");
 				break;
 			}
 			case 2:{
@@ -111,10 +114,12 @@ int main(){
 				cout<<"---Bosque Inicial---"<<endl<<endl;
 				verBosque(bosque2);
 				cout<<endl<<"Presione enter para comenzar a propagar el fuego...";
-			    cin.ignore();
-				cin.get();
+			    cin.ignore(); cin.get(); system("cls");
 				bosqueFinal[n][n]=bosque2[n][n];
-				
+				cout<<"---Bosque 2 después de Quemarse---"<<endl<<endl;
+				quemarArbol(bosque2, bosqueFinal);
+				verBosque(bosqueFinal);
+				Sleep(3500); system("cls");
 				break;
 			}
 			case 3:{
@@ -122,10 +127,12 @@ int main(){
 				cout<<"---Bosque Inicial---"<<endl<<endl;
 				verBosque(bosque3);
 				cout<<endl<<"Presione enter para comenzar a propagar el fuego...";
-			    cin.ignore();
-				cin.get();
+			    cin.ignore(); cin.get(); system("cls");
 				bosqueFinal[n][n]=bosque3[n][n];
-				
+				cout<<"---Bosque 3 después de Quemarse---"<<endl<<endl;
+				quemarArbol(bosque3, bosqueFinal);
+				verBosque(bosqueFinal);
+				Sleep(3500); system("cls");
 				break;
 			}
 			case 4:{
